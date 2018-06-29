@@ -1,8 +1,10 @@
 import React from 'react';
+// CONFIG
+import { CURRENT_YEAR } from '../../config';
 
 const Footer = () => (
-  <div>
-    Made with love by <a href="http://www.alexbretones.com" target="_blank">AlexBHdez</a> ©2018
+  <div className="container-fluid">
+    Made with love by <a href="http://www.alexbretones.com" target="_blank">AlexBHdez</a> ©{ CURRENT_YEAR }
   </div>
 )
 

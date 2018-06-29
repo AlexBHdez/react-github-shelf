@@ -6,7 +6,7 @@ import Footer from '../../components/Footer/footer';
 class Layout extends Component {
   render() {
     return(
-      <div>
+      <div className="text-center">
         <Header/>
         { this.props.children }
         <Footer/>
