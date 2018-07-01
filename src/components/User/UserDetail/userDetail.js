@@ -32,16 +32,21 @@ class UserDetail extends Component {
           blog,
           followers
         } = response.data;
+
+        axios.get(`https://api.github.com/users/${response.data.login}/repos?per_page=250`)
+          .then((response) => {
+            this.setState({
+              login,
+              avatar_url,
+              bio,
+              location,
+              public_repos,
+              blog,
+              followers,
+              repos: response.data
+            })
+          })
           
-        this.setState({
-          login,
-          avatar_url,
-          bio,
-          location,
-          public_repos,
-          blog,
-          followers
-        })
       })
   }
 
@@ -49,7 +54,7 @@ class UserDetail extends Component {
     return(
       <div className={`container ${style.userWrapper}`}>
         <UserBox {...this.state} />
-        <UserRepos />
+        <UserRepos repos={this.state.repos} />
       </div>
     )
   }

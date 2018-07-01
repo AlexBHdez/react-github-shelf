@@ -4,7 +4,6 @@ import * as FontAwesome from 'react-icons/lib/fa';
 import style from './userBox.css';
 
 const UserBox = (props) => {
-  console.log(props);
   return(
     <div className={`list-group-item ${style.flexWrapper}`}>
       <div className={style.flexInfo}>
