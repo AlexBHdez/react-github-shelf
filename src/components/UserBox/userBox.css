@@ -1,0 +1,49 @@
+.flexWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image {
+  width: 200px;
+  height: auto;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.flexInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flexBio {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.h3 {
+  font-size: 14px;
+}
+
+p {
+  margin-bottom: 5px;
+  max-width: 80%;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+  display: inline;
+  margin-right: 10px;
+}
+
+.moreInfoItem {
+  font-size: 11px;
+  font-weight: 100;
+  padding-left: 5px;
+}

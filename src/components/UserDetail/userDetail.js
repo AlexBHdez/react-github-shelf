@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 // CSS
-import * as FontAwesome from 'react-icons/lib/fa';
 import style from './userDetail.css';
+// COMPONENTS
+import UserBox from '../UserBox/userBox';
+import UserRepos from '../UserRepos/userRepos';
 
 class UserDetail extends Component {
 
@@ -14,6 +16,7 @@ class UserDetail extends Component {
     public_repos: '',
     blog: '',
     followers: '',
+    repos: []
   }
 
   componentWillMount() {
@@ -29,7 +32,7 @@ class UserDetail extends Component {
           blog,
           followers
         } = response.data;
-
+          
         this.setState({
           login,
           avatar_url,
@@ -45,35 +48,8 @@ class UserDetail extends Component {
   render() {
     return(
       <div className={`container ${style.userWrapper}`}>
-        <div className={`list-group-item ${style.flexWrapper}`}>
-          <div className={style.flexInfo}>
-            <img className={style.image} src={this.state.avatar_url} alt="wola"/>
-            <div className={style.flexBio}>
-              <h4>{this.state.login}</h4>
-              <p>{this.state.bio}</p>
-              <ul className={style.flexMoreInfo}>
-                <li>
-                  <FontAwesome.FaMapMarker />
-                  <span className={style.moreInfoItem}>{this.state.location}</span>
-                </li>
-                <li>
-                  <FontAwesome.FaGithub />
-                  <span className={style.moreInfoItem}>{this.state.public_repos}</span>
-                </li>
-                <li>
-                  <FontAwesome.FaUser />
-                  <span className={style.moreInfoItem}>{this.state.followers}</span>
-                </li>
-                <li>
-                  <a href={this.state.blog}>
-                    <FontAwesome.FaExternalLink />
-                    <span className={style.moreInfoItem}>{this.state.blog.slice(4)}</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <UserBox {...this.state} />
+        <UserRepos />
       </div>
     )
   }
