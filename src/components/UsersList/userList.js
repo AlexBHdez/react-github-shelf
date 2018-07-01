@@ -6,7 +6,7 @@ const UserList = (props) => (
   <div className={`list-group`}>
     { props.users.map((user, index) => {
       return(
-        <a href="#" className={`list-group-item list-group-item-action ${style.flexWrapper}`} key={index}>
+        <a href="" className={`list-group-item list-group-item-action ${style.flexWrapper}`} key={index}>
           <div className={style.flexInfo}>
             <img className={`${style.image}`} src={user.avatar_url} alt={`avatar_${user.login}`}/>
             <h4>{user.login}</h4>

@@ -4,11 +4,13 @@ import { Route, Switch } from 'react-router-dom';
 import Layout from './hoc/Layout/layout';
 // COMPONENTS
 import Home from './components/Home/home';
+import UserDetail from './components/UserDetail/userDetail';
 
 const Routes = () => (
   <Layout>
     <Switch>
       <Route path="/" exact component={Home} />
+      <Route path="/user/:username" exact component={UserDetail} />
     </Switch>
   </Layout>
 )
