@@ -21,6 +21,7 @@ class UserDetail extends Component {
 
   componentWillMount() {
     let username = this.props.match.params.username;
+
     axios.get(`https://api.github.com/users/${username}`)
       .then((response) => {
         const {
@@ -51,6 +52,7 @@ class UserDetail extends Component {
   }
 
   render() {
+    console.log(this.state.loading);
     return(
       <div className={`container ${style.userWrapper}`}>
         <UserBox {...this.state} />
