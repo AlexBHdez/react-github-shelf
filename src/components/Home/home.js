@@ -16,7 +16,7 @@ class Home extends Component {
     let keyword = event.target.value;
     axios.get(`https://api.github.com/search/users?q=${keyword}+in:login`)
       .then((response) => {
-        console.log(response);
+        console.log(response.data.items);
         this.setState({
           users: response.data.items,
         })
