@@ -7,10 +7,12 @@ import UserBox from '../UserBox/userBox';
 import UserRepos from '../UserRepos/userRepos';
 // WIDGETS
 import Spinner from '../../../Widgets/Spinner/spinner';
+import BlankState from '../../../Widgets/BlankState/blankState';
 
 class UserDetail extends Component {
 
   state = {
+    blankState: false,
     loading: true,
     login: '',
     avatar_url: '',
@@ -51,14 +53,30 @@ class UserDetail extends Component {
               repos: response.data
             })
           })
-          
+          .catch((err) => {
+            console.log(err);
+            this.setState({
+              loading: false,
+              blankState: true,
+            })
+          })
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({
+          loading: false,
+          blankState: true,
+        })
       })
   }
 
   render() {
     return(
     <div className={`container ${style.userWrapper}`}>
-      { this.state.loading ?
+      { this.state.blankState ? 
+        <BlankState message={2} />
+      :
+      this.state.loading ?
         <Spinner />
       :
         <div>

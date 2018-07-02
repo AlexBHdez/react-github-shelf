@@ -1,12 +1,9 @@
-.logoIcon {
-  font-size: 100px;
-}
-
 .headerContent {
   font-family: 'Lobster', sans-serif, cursive;
   font-size: 30px;
   position: relative;
   display: inline-block;
+  padding-top: 20px;
 }
 
 .headerContent::after {

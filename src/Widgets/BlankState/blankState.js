@@ -2,12 +2,21 @@ import React from 'react';
 // CSS
 import style from './blankState.css';
 
-let messages = [
-  `If you start typing in the input below(more than 2 letters please), I will search
+let blankStates = {
+  start: {
+    title: 'Type to search',
+    message: `If you start typing in the input below(more than 2 letters please), I will search
   for you in the Github Users Database.`,
-  `Sorry, I didn 't found any users with that name. Please, try again.`,
-  `Sorry, some error ocurred with the github api. Please, reload the page and try again.`
-]
+  },
+  noUser: {
+    title: 'No user found',
+    message: `Sorry, I used the force, but I didn 't found any users with that name. Please, type another username.`,
+  },
+  error: {
+    title: 'You got me',
+    message: `Sorry, some error ocurred with the github api. Please, reload the page and try again.`
+  }
+}
 
 const BlankState = (props) => {
   let template = null;
@@ -17,7 +26,10 @@ const BlankState = (props) => {
       template = (
         <div className={style.blankStateWrapper}>
           <div className={style.message}>
-            {messages[0]}
+            <h2>
+              {blankStates.start.title}
+            </h2>
+            {blankStates.start.message}
           </div>
           <div className={style.imageWrapper}>
             <img className={style.image} src="/img/blank-state-00.png" alt="blank-state"/>
@@ -30,7 +42,10 @@ const BlankState = (props) => {
       template = (
         <div className={style.blankStateWrapper}>
           <div className={style.message}>
-            {messages[1]}
+            <h2>
+              {blankStates.noUser.title}
+            </h2>
+            {blankStates.noUser.message}
           </div>
           <div className={style.imageWrapper}>
             <img className={style.image} src="/img/blank-state-01.png" alt="blank-state"/>
@@ -43,7 +58,10 @@ const BlankState = (props) => {
       template = (
         <div className={style.blankStateWrapper}>
           <div className={style.message}>
-            {messages[2]}
+            <h2>
+              {blankStates.error.title}
+            </h2>
+            {blankStates.error.message}
           </div>
           <div className={style.imageWrapper}>
             <img className={style.image} src="/img/blank-state-02.png" alt="blank-state"/>
