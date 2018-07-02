@@ -15,6 +15,7 @@ class Home extends Component {
     blankState: true,
     loading: false,
     users: [],
+    message: 'If you start typing in the input below (more than 2 letters please), I will search for you in the Github Users Database.',
   }
 
   searchByKeyword = (event) => {
@@ -27,9 +28,24 @@ class Home extends Component {
       })
       axios.get(`https://api.github.com/search/users?q=${keyword}+in:login`)
         .then((response) => {
+          response.data.items.length > 0 ?
           this.setState({
             loading: false,
             users: response.data.items,
+          })
+          :
+          this.setState({
+            loading: false,
+            blankState: true,
+            message: `Sorry, I didn't found any users with that name. Please, try again.`
+          })
+        })
+        .catch((err) => {
+          console.log(err);
+          this.setState({
+            loading: false,
+            blankState: true,
+            message: `Sorry, some error ocurred with the github api. Please, reload the page and try again.`
           })
         })
     } else {
@@ -45,7 +61,7 @@ class Home extends Component {
       <div className={`container ${style.homeWrapper}`} >
         <Search keywords={ this.searchByKeyword } />
         { this.state.blankState ?
-          <BlankState message={`If you start typing in the input below (more than 2 letters please), I will search for you in the Github Users Database.`} />
+          <BlankState message={this.state.message} />
         :
         this.state.loading ?
           <Spinner />

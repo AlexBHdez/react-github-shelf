@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 // COMPONENTS
 import Header from '../../components/Header/header';
 import Footer from '../../components/Footer/footer';
 // CSS
 import style from './layout.css';
 
-class Layout extends Component {
-  render() {
-    return(
-      <div className={`text-center ${style.layoutWrapper}`}>
-        <Header/>
-        <div className={style.content}>
-          { this.props.children }
-        </div>
-        <Footer/>
-      </div>
-    )
-  }
-}
+const Layout = (props) => (
+  <div className={`text-center ${style.layoutWrapper}`}>
+    <Header/>
+    <div className={style.content}>
+      { props.children }
+    </div>
+    <Footer/>
+  </div>
+)
 
 export default Layout;
