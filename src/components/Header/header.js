@@ -5,7 +5,7 @@ import style from './header.css';
 import FaGithubAlt from 'react-icons/lib/fa/github-alt';
 
 const Header = () => (
-  <header className={`container-fluid ${style.header}`}>
+  <header className="container-fluid">
     <Link to="/">
       <div className={style.logoWrapper}>
         <FaGithubAlt className={style.logoIcon} />

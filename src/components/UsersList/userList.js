@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import style from './userList.css';
 
 const UserList = (props) => (
-  <div className={`list-group`}>
+  <div className={`list-group ${style.usersWrapper}`}>
     { props.users.map((user, index) => {
       return(
         <Link to={`/user/${user.login}`} key={index}>

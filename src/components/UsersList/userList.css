@@ -1,3 +1,7 @@
+.usersWrapper {
+  margin-top: 20px;
+}
+
 .flexWrapper {
   display: flex;
   justify-content: space-between;
