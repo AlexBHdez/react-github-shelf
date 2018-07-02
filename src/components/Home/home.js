@@ -3,6 +3,8 @@ import axios from 'axios';
 // COMPONENTS
 import Search from '../Search/search';
 import UserList from '../UsersList/userList';
+// WIDGETS
+import Spinner from '../../Widgets/Spinner/spinner';
 // CSS
 import style from './home.css';
 
@@ -34,7 +36,7 @@ class Home extends Component {
       <div className={`container ${style.homeWrapper}`} >
         <Search keywords={ this.searchByKeyword } />
         { this.state.loading ?
-          <div className={style.spinner}></div>
+          <Spinner />
           :
           <UserList users={this.state.users} />
         }
