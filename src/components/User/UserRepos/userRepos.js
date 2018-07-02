@@ -12,7 +12,7 @@ const UserRepos = (props) => (
               <h2 className={style.title} >
                 {repo.name}
               </h2>
-              <p>
+              <p className={style.description}>
                 {repo.description}
               </p>
             </div>

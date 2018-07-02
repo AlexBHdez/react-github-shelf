@@ -1,11 +1,12 @@
 .footer {
-  position: absolute;
-  bottom: 0;
+  flex-shrink: 0;
 }
 
-p {
+.content {
   font-size: 12px;
   font-weight: 100;
+  text-align: center;
+  margin: 50px auto 5px;
 }
 
 .icon {

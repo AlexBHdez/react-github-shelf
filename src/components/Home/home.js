@@ -27,7 +27,6 @@ class Home extends Component {
       })
       axios.get(`https://api.github.com/search/users?q=${keyword}+in:login`)
         .then((response) => {
-          console.log(response.data.items);
           this.setState({
             loading: false,
             users: response.data.items,
@@ -42,7 +41,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.state.loading);
     return(
       <div className={`container ${style.homeWrapper}`} >
         <Search keywords={ this.searchByKeyword } />

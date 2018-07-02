@@ -10,7 +10,9 @@ class Layout extends Component {
     return(
       <div className={`text-center ${style.layoutWrapper}`}>
         <Header/>
-        { this.props.children }
+        <div className={style.content}>
+          { this.props.children }
+        </div>
         <Footer/>
       </div>
     )
