@@ -20,6 +20,7 @@ class Home extends Component {
 
   searchByKeyword = (event) => {
     let keyword = event.target.value;
+
     
     if (keyword.length > 2) {
       this.setState({

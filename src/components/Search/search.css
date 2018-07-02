@@ -1,8 +1,15 @@
 .inputWrapper {
   width: 40%;
+  min-width: 200px;
   margin: 0 auto;
 }
 
 input {
   text-align: center;
+}
+
+@media(max-width: 800px) {
+  .inputWrapper {
+    width: 80%;
+  }
 }

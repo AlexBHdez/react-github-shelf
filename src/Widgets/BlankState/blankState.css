@@ -1,9 +1,10 @@
 .blankStateWrapper {
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 .imageWrapper {
-  width: 40%;
+  width: 20%;
+  min-width: 200px;
   margin: 0 auto;
 }
 
@@ -16,4 +17,15 @@
   margin: 20px auto;
   text-align: center;
   color: #939393;
+  font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  .imageWrapper {
+    width: 60%;
+  }
+  
+  .message {
+    width: 80%;
+  }
 }
