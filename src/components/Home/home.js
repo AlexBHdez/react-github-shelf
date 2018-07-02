@@ -15,7 +15,7 @@ class Home extends Component {
     blankState: true,
     loading: false,
     users: [],
-    message: 'If you start typing in the input below (more than 2 letters please), I will search for you in the Github Users Database.',
+    message: 0,
   }
 
   searchByKeyword = (event) => {
@@ -37,7 +37,7 @@ class Home extends Component {
           this.setState({
             loading: false,
             blankState: true,
-            message: `Sorry, I didn't found any users with that name. Please, try again.`
+            message: 1
           })
         })
         .catch((err) => {
@@ -45,13 +45,14 @@ class Home extends Component {
           this.setState({
             loading: false,
             blankState: true,
-            message: `Sorry, some error ocurred with the github api. Please, reload the page and try again.`
+            message: 2
           })
         })
     } else {
       this.setState({
         blankState: true,
         loading: false,
+        message: 0
       })
     }
   }
