@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // CSS
 import style from './userList.css';
 
@@ -23,5 +24,9 @@ const UserList = (props) => (
     }) }
   </div>
 )
+
+UserList.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.object),
+}
 
 export default UserList;

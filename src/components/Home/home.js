@@ -14,8 +14,8 @@ class Home extends Component {
   state = {
     blankState: true,
     loading: false,
-    users: [],
-    message: 0,
+    users: Array,
+    message: 'start',
   }
 
   searchByKeyword = (event) => {
@@ -38,7 +38,7 @@ class Home extends Component {
           this.setState({
             loading: false,
             blankState: true,
-            message: 1
+            message: 'no user'
           })
         })
         .catch((err) => {
@@ -46,14 +46,14 @@ class Home extends Component {
           this.setState({
             loading: false,
             blankState: true,
-            message: 2
+            message: 'error'
           })
         })
     } else {
       this.setState({
         blankState: true,
         loading: false,
-        message: 0
+        message: 'start'
       })
     }
   }

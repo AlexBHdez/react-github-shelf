@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // COMPONENTS
 import Header from '../../components/Header/header';
 import Footer from '../../components/Footer/footer';
@@ -14,5 +15,9 @@ const Layout = (props) => (
     <Footer/>
   </div>
 )
+
+Layout.propTypes = {
+  children: PropTypes.object.isRequired,
+}
 
 export default Layout;

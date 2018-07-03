@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // CSS
 import * as FontAwesome from 'react-icons/lib/fa';
 import style from './userBox.css';
@@ -36,5 +37,18 @@ const UserBox = (props) => {
     </div>
   )
 };
+
+UserBox.propTypes = {
+  blankState: PropTypes.bool,
+  loading: PropTypes.bool,
+  login: PropTypes.string.isRequired,
+  avatar_url: PropTypes.string.isRequired,
+  bio: PropTypes.string,
+  location: PropTypes.string,
+  public_repos: PropTypes.number.isRequired,
+  blog: PropTypes.string,
+  followers: PropTypes.number,
+  repos: PropTypes.arrayOf(PropTypes.object).isRequired,
+}
 
 export default UserBox;

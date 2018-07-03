@@ -14,14 +14,14 @@ class UserDetail extends Component {
   state = {
     blankState: false,
     loading: true,
-    login: '',
-    avatar_url: '',
-    bio: '',
-    location: '',
-    public_repos: '',
-    blog: '',
-    followers: '',
-    repos: []
+    login: String,
+    avatar_url: String,
+    bio: String,
+    location: String,
+    public_repos: Number,
+    blog: String,
+    followers: Number,
+    repos: Array,
   }
 
   componentWillMount() {
@@ -74,7 +74,7 @@ class UserDetail extends Component {
     return(
     <div className={`container ${style.userWrapper}`}>
       { this.state.blankState ? 
-        <BlankState message={2} />
+        <BlankState message={'error'} />
       :
       this.state.loading ?
         <Spinner />

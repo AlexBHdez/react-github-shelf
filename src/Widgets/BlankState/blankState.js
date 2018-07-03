@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // CSS
 import style from './blankState.css';
 
@@ -37,19 +38,19 @@ const BlankState = (props) => {
   let image = null;
 
   switch (props.message) {
-    case 0:
+    case 'start':
       title = blankStates.start.title;
       content = blankStates.start.message;
       image = <img className={style.image} src={blankStates.start.image.url} alt={blankStates.start.image.alt}/>;
     break;
     
-    case 1:
+    case 'no user':
       title = blankStates.noUser.title;
       content = blankStates.noUser.message;
       image = <img className={style.image} src={blankStates.noUser.image.url} alt={blankStates.start.image.alt}/>;
     break;
 
-    case 2:
+    case 'error':
       title = blankStates.error.title;
       content = blankStates.error.message;
       image = <img className={style.image} src={blankStates.error.image.url} alt={blankStates.start.image.alt}/>;
@@ -72,6 +73,12 @@ const BlankState = (props) => {
       </div>
     </div>
   )
+}
+
+BlankState.propTypes = {
+  message: PropTypes.oneOf([
+    'start', 'no user', 'error'
+  ]).isRequired,
 }
 
 export default BlankState;
