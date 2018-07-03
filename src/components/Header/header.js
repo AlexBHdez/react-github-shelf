@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 // CSS Modules
 import style from './header.css';
 
@@ -17,4 +17,4 @@ const Header = () => (
   </header>
 )
 
-export default Header;
+export default withRouter(Header);
