@@ -2,7 +2,7 @@
   "name": "react-github-shelf",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alexbhdez.github.io/react-github-shelf/",
+  "homepage": "https://alexbhdez.github.io/react-github-shelf",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
