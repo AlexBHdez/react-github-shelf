@@ -10,8 +10,8 @@ const Routes = () => (
   <Layout>
     <HashRouter>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/user/:username" exact component={UserDetail} />
+        <Route path="/" component={Home} />
+        <Route path="/user/:username" component={UserDetail} />
       </Switch>
     </HashRouter>
   </Layout>

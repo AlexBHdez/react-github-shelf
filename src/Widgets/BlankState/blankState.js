@@ -9,7 +9,7 @@ let blankStates = {
     message: `If you start typing in the input below(more than 2 letters please), I will search
   for you in the Github Users Database.`,
     image: {
-      url: '/img/blank-state-00.png',
+      url: 'img/blank-state-00.png',
       alt: 'blank-state-00',
     }
       
@@ -18,7 +18,7 @@ let blankStates = {
     title: 'No user found',
     message: `Sorry, I used the force, but I didn 't found any users with that name. Please, type another username.`,
     image: {
-      url: '/img/blank-state-01.png',
+      url: 'img/blank-state-01.png',
       alt: 'blank-state-01',
     }
   },
@@ -26,7 +26,7 @@ let blankStates = {
     title: 'You got me',
     message: `Sorry, some error ocurred with the github api. Please, reload the page and try again.`,
     image: {
-      url: '/img/blank-state-02.png',
+      url: 'img/blank-state-02.png',
       alt: 'blank-state-02',
     }
   }
